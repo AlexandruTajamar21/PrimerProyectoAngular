@@ -1,0 +1,23 @@
+<h1>Formulario Binding Model</h1>
+<h2 style="color: blue;">{{mensaje}}</h2>
+
+<form #userForm="ngForm" (ngSubmit)="recibirformulario()">
+    <label>Nombre: </label>
+    <input type="text" name="cajanombre"
+        #cajanombre="ngModel" [(ngModel)]="user.nombre" required/>
+    <label style="color: red" *ngIf="!cajanombre.valid && cajanombre.touched">El nombre es obligarotio</label><br>
+    <label>Apellido:</label>
+    <input type="text" name="cajaapellido"
+        #cajaapellido="ngModel" [(ngModel)]="user.apellido" pattern="[A-Z]{1}[a-z]{2}"/>
+    <label style="color: red" *ngIf="!cajaapellido.valid && cajaapellido.touched">El apellido debe contener una mayuscula y 2 letras por lo menos...</label><br>
+    <label>Edad:</label>
+    <input type="number" name="cajaedad"
+        #cajaedad="ngModel" [(ngModel)]="user.edad"/><br>
+    <button [disabled]="!userForm.valid">
+        Enviar Datos
+    </button>
+</form>
+<hr>
+<h2>Nombre: {{user.nombre}}</h2>
+<h2>Apellido: {{user.apellido}}</h2>
+<h2>Edad: {{user.edad}}</h2>

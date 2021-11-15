@@ -1,0 +1,15 @@
+<h1>Formulario referencia</h1>
+
+<form #sumarForm="ngForm">
+    <label>Numero 1: </label>
+    <input type="number"
+            name="cajanumero1"
+            #cajanmero1><br/>
+    <label>Numero 2: </label>
+    <input type="number"
+            name="cajanumero2"
+            #cajanmero2><br/>
+    <button (click)="sumarNumeros()">
+        Sumar Numeros
+    </button>
+</form>

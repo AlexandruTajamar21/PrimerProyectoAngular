@@ -1,0 +1,23 @@
+<h1 style="color: blueviolet">Ejemplo de directivas Angular</h1>
+
+<h2>Estilos con ngStyle</h2>
+<ul>
+    <li *ngFor="let num of numeros" [class.estiloPar]="num%2==0" [class.estiloImpar]="num%2==1">
+        {{num}}
+    </li>
+</ul>
+
+<div>
+    <h2>Numero de Deportes: {{sports.length}}</h2>
+    <div *ngIf="sports.length < 7">
+        <p>Tienes menos de 7 deportes</p>
+    </div>
+    <div>
+        <h4>El primer deporte es {{sports[0]}}</h4>
+    </div>
+    <ul>
+        <li *ngFor="let sport of sports; let i = index">
+            Posicion: {{i}}, Deporte: {{sport}}
+        </li>
+    </ul>
+</div>
